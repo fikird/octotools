@@ -16,7 +16,7 @@ def create_llm_engine(model_string: str, use_cache: bool = False, is_multimodal:
         from .deepseek import ChatDeepseek
         return ChatDeepseek(model_string=model_string, use_cache=use_cache, is_multimodal=is_multimodal, **kwargs)
     
-    elif "gemini" in model_string:
+    elif "gemini" or 'gemma' in model_string:
         from .gemini import ChatGemini
         return ChatGemini(model_string=model_string, use_cache=use_cache, is_multimodal=is_multimodal, **kwargs)
     
